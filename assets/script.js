@@ -30,3 +30,11 @@ saveBtn.click(function () {
 });
 
 console.log(localStorage);
+
+// function to clear local storage/clearSchedule
+function clearSchedule() {
+    localStorage.clear();
+}
+
+// clearBtn.click to call clearSchedule
+clearBtn.click(clearSchedule);
