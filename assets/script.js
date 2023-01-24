@@ -10,6 +10,7 @@ console.log(theDay + theHour);
 var saveBtn = $(".saveBtn");
 var taskText = $(".description");
 var timeDivs = $(".time-div");
+var timeDivs_array = [...timeDivs];
 var clearBtn = $(".clearBtn");
 var currentDay = $("#currentDay");
 
@@ -34,6 +35,7 @@ console.log(localStorage);
 // function to clear local storage/clearSchedule
 function clearSchedule() {
     localStorage.clear();
+    scheduler();
 };
 
 // clearBtn.click to call clearSchedule
@@ -53,14 +55,23 @@ timeDivs.each(function () {
     }
 });
 
-// set .description text as value (task) in localstorage by retrieving using key (taskTime)
-$("#hour-09 .description").val(localStorage.getItem("09"));
-$("#hour-10 .description").val(localStorage.getItem("10"));
-$("#hour-11 .description").val(localStorage.getItem("11"));
-$("#hour-12 .description").val(localStorage.getItem("12"));
-$("#hour-13 .description").val(localStorage.getItem("13"));
-$("#hour-14 .description").val(localStorage.getItem("14"));
-$("#hour-15 .description").val(localStorage.getItem("15"));
-$("#hour-16 .description").val(localStorage.getItem("16"));
-$("#hour-17 .description").val(localStorage.getItem("17"));
+// set .description textContent from (task) localstorage by retrieving using getItem key (taskTime)
+function scheduler() {
+    timeDivs_array.forEach(div => {
+        div.querySelector(".description").textContent = (localStorage.getItem(div.id.split("-")[1]));
+    });
+}
+
+scheduler();
+
+
+// $("#hour-09 .description").val(localStorage.getItem("09"));
+// $("#hour-10 .description").val(localStorage.getItem("10"));
+// $("#hour-11 .description").val(localStorage.getItem("11"));
+// $("#hour-12 .description").val(localStorage.getItem("12"));
+// $("#hour-13 .description").val(localStorage.getItem("13"));
+// $("#hour-14 .description").val(localStorage.getItem("14"));
+// $("#hour-15 .description").val(localStorage.getItem("15"));
+// $("#hour-16 .description").val(localStorage.getItem("16"));
+// $("#hour-17 .description").val(localStorage.getItem("17"));
 
