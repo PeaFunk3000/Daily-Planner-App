@@ -22,7 +22,7 @@ setInterval(function () {
     $("#currentDay").text(clockTime.format("dddd, D MMMM YYYY"))
 }, 1000);
 
-// click function for save buttons
+// click function for save buttons, setting taskTime as key and task as value
 saveBtn.click(function () {
     var task = $(this).siblings(".description").val();
     var taskTime = $(this).parent().attr("id").split("-")[1];
@@ -52,3 +52,15 @@ timeDivs.each(function () {
         $(this).children(".description").addClass("past");
     }
 });
+
+// set .description text as value (task) in localstorage by retrieving using key (taskTime)
+$("#hour-09 .description").val(localStorage.getItem("09"));
+$("#hour-10 .description").val(localStorage.getItem("10"));
+$("#hour-11 .description").val(localStorage.getItem("11"));
+$("#hour-12 .description").val(localStorage.getItem("12"));
+$("#hour-13 .description").val(localStorage.getItem("13"));
+$("#hour-14 .description").val(localStorage.getItem("14"));
+$("#hour-15 .description").val(localStorage.getItem("15"));
+$("#hour-16 .description").val(localStorage.getItem("16"));
+$("#hour-17 .description").val(localStorage.getItem("17"));
+
