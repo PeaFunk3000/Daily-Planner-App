@@ -43,4 +43,12 @@ clearBtn.click(clearSchedule);
 timeDivs.each(function () {
     var divHour = $(this).attr("id").split("-")[1];
     console.log(divHour);
+    // if statement to compare theHour with divHour to add present, future and past CSS to .description
+    if (theHour == divHour) {
+        $(this).children(".description").addClass("present");
+    } else if (theHour < divHour) {
+        $(this).children(".description").addClass("future");
+    } else if (theHour > divHour) {
+        $(this).children(".description").addClass("past");
+    }
 });
