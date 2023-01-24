@@ -34,7 +34,13 @@ console.log(localStorage);
 // function to clear local storage/clearSchedule
 function clearSchedule() {
     localStorage.clear();
-}
+};
 
 // clearBtn.click to call clearSchedule
 clearBtn.click(clearSchedule);
+
+// for each to target divHour
+timeDivs.each(function () {
+    var divHour = $(this).attr("id").split("-")[1];
+    console.log(divHour);
+});
