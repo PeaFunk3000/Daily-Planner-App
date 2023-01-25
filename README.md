@@ -10,7 +10,6 @@ The following shows the web application's appearance and functionality:
 <br>
 <img src="./assets/imgs/Capture.JPG">
 <br>
-![A user clicks on slots on the color-coded calendar and edits the events.](./assets/imgs/Demo.gif.gif)
 
 The application:
 
